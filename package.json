@@ -1,0 +1,38 @@
+{
+  "name": "custom-viz-lib-boilerplate",
+  "version": "1.0.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16"
+  },
+  "scripts": {
+    "prebuild": "rewrite-tsconfig",
+    "prelint": "rewrite-tsconfig",
+    "start": "webpack --mode production --watch",
+    "build": "webpack --mode production",
+    "test": "jest",
+    "lint": "eslint --cache --format codeframe --ext mjs,jsx,js,ts,tsx src test && tsc"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb": "^9.5.0",
+    "@neutrinojs/jest": "^9.5.0",
+    "@neutrinojs/react-components": "^9.5.0",
+    "eslint": "^7",
+    "jest": "^26",
+    "prop-types": "^15",
+    "react": "^16",
+    "react-dom": "^16",
+    "webpack": "^4",
+    "webpack-cli": "^3",
+    "webpack-dev-server": "^3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-0",
+    "neutrino": "^9.5.0",
+    "neutrinojs-typescript": "^1.1.6",
+    "neutrinojs-typescript-eslint": "^1.3.2",
+    "typescript": "^4.5.3"
+  }
+}
