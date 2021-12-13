@@ -20,14 +20,14 @@ A lightweight Neutrino.js based platform for building a collection of Looker cus
   - `hello_world_react` includes a react app entrypoint.
 
 #### Publishing Visualizations
-- For a single run for production, use `yarn build`.
+- For a single pre-production run, use `yarn build`.
 - This repo can be added directly to a Looker project, and [configured with LookML](https://docs.looker.com/reference/manifest-params/visualization).
 - Alternatively the built js files can be hosted and anywhere and [configured through the UI](https://docs.looker.com/admin-options/platform/visualizations).
 
 #### Webpack Configuration
 - The project loads Typescript, but vanilla js will work just as well.
 - Neurino.js uses its own preset and configuration model. If you need to modify the webpack configuration, do so in `.neutrino.js`. [Click here for more info](https://neutrinojs.org/webpack-chain/#webpack-chain-neutrino-configuration-api).
-- If you need to modify the linting configuration, this is done through the `.neutrino.js` file as well under the Airbnb present. [Click here for more info](https://neutrinojs.org/packages/eslint/#neutrino-eslint-middleware).
+- If you need to modify the linting configuration, this is done through the `.neutrino.js` file as well under the Airbnb preset. [Click here for more info](https://neutrinojs.org/packages/eslint/#neutrino-eslint-middleware).
 
 #### Testing
 - Jest test files can be added to the `/test` directory.
