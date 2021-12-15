@@ -41,6 +41,17 @@ const viz: HelloWorldViz = {
   },
   updateAsync(data, element, config, queryResponse, details, done) {
     this.clearErrors();
+
+    // Update the chart
+    this.chart = ReactDOM.render(
+      React.createElement(App, {
+        data,
+        config,
+        queryResponse,
+      }),
+      this.app,
+    );
+
     done();
   },
 };

@@ -1,5 +1,15 @@
-import React, { JSX } from 'react';
+import React from 'react';
+import type { VisData, VisQueryResponse, VisConfig } from '../../../types/looker';
 
-const App = (): JSX.Element => <div>Hello World</div>;
+export interface AppProps {
+  data: VisData
+  config?: VisConfig
+  queryResponse: VisQueryResponse
+}
+
+const App = ({ data, queryResponse }: AppProps): React.FC => {
+  if (!data || !queryResponse) return (<div>No Data</div>);
+  return ('Hello World');
+};
 
 export default App;
