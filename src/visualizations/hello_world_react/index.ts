@@ -7,17 +7,18 @@ import App from './app/app';
 declare const looker: Looker;
 
 interface HelloWorldViz extends VisualizationDefinition {
-  style?: HTMLElement,
+    style?: HTMLElement,
 }
 
 const viz: HelloWorldViz = {
-  options: {},
-  create(element) {
-     /* eslint-disable no-param-reassign */
-    element.innerHTML = `
+    options: {},
+    create(element) {
+        /* eslint-disable no-param-reassign */
+        element.innerHTML = `
       <style>
       .hello_world_viz {
           /* Vertical centering */
+          margin-top: 20px;
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -27,33 +28,34 @@ const viz: HelloWorldViz = {
       </style>
     `;
 
-    const container = element.appendChild(document.createElement('div'));
-    container.className = 'hello_world_viz';
+        const container = element.appendChild(document.createElement('div'));
+        container.className = 'hello_world_viz';
 
-    // Create an element to contain the text.
-    this.app = container.appendChild(document.createElement('div'));
+        // Create an element to contain the text.
+        this.app = container.appendChild(document.createElement('div'));
 
-    // Render to the target element
-    this.chart = ReactDOM.render(
-      React.createElement(App),
-      this.app,
-    );
-  },
-  updateAsync(data, element, config, queryResponse, details, done) {
-    this.clearErrors();
+        // Render to the target element
+        this.chart = ReactDOM.render(
+            React.createElement(App),
+            this.app,
+        );
+    },
+    updateAsync(data, element, config, queryResponse, details, done) {
+        this.clearErrors();
+        console.log(data);
 
-    // Update the chart
-    this.chart = ReactDOM.render(
-      React.createElement(App, {
-        data,
-        config,
-        queryResponse,
-      }),
-      this.app,
-    );
+        // Update the chart
+        this.chart = ReactDOM.render(
+            React.createElement(App, {
+                data,
+                config,
+                queryResponse,
+            }),
+            this.app,
+        );
 
-    done();
-  },
+        done();
+    },
 };
 
 looker.plugins.visualizations.add(viz);
